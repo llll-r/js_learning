@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>隐藏</button>
+    <!-- <input type="button" value="按钮" id="anniu"> -->
+    <br>
+    <img src="images/1.jpg" alt="" height="200">
+    <script>
+        const img = document.querySelector("img")
+        const btn = document.querySelector("button")
+        let flag = 1;
+        btn.addEventListener("click", (e)=>{ 
+            // console.log(e.target.value);
+            // if(btn.innerText =="显示")
+           if(btn.innerHTML =="隐藏"){
+            btn.innerHTML = "显示"
+            img.style.display = "none"
+            // flag = 0;
+           }
+           else{
+            btn.innerHTML = "隐藏"
+            img.style.display = "block"
+            // flag = 1;
+           }
+        })
+        // var input = document.addEventListener("click", function(){
+        //     console.log(event.target.value);
+        // })
+
+
+    </script>
+</body>
+</html>

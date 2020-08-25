@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+        <img src="images/1.jpg" alt=""  height="200px";>
+        <br>
+      <button id="pre">上一个</button>
+      <button id="next">下一个</button>
+    </div>
+</body>
+<script>
+    let image = document.querySelector("img");
+    let pre_button  = document.querySelector("#pre")
+    let next_button = document.querySelector("#next")
+    console.log(image, pre_button, next_button);
+    let minIndex = 1, maxIndex = 5, currentIndex = minIndex;
+    next_button.addEventListener("click", function(){
+        currentIndex++;
+        currentIndex = currentIndex>maxIndex?minIndex :currentIndex
+        console.log(currentIndex)
+      image.src = `images/${currentIndex}.jpg`
+    // image.setAttribute("src",`images/${currentIndex}.jpg`)
+    })
+    pre_button.addEventListener("click", function(){
+        currentIndex--;
+        currentIndex = currentIndex<minIndex?maxIndex :currentIndex
+        console.log(currentIndex)
+      image.src = `images/${currentIndex}.jpg`
+    // image.setAttribute("src",`images/${currentIndex}.jpg`)
+    })
+</script>
+</html>

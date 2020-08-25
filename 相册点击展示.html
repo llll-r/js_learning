@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        margin: 0;
+    }
+    ul{
+        /* text-decoration: none; */
+        list-style: none;
+        margin-left: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    li{
+        float: left;
+        margin: 0 10px;
+        border: 3px solid white;
+    }
+    li img{
+        box-sizing: border-box;
+    }
+    li:hover{
+            cursor: pointer;
+         
+    }
+    .active{
+        border-color: red;
+    }
+    
+</style>
+<body>
+    <img src="images/4.jpg" alt="" height="240">
+    <ul>
+        <li class="active"><img src="images/1.jpg" alt="" height="30"></li>
+        <li><img src="images/2.jpg" alt=""height="30"></li>
+        <li><img src="images/3.jpg" alt=""height="30"></li>
+        <li><img src="images/4.jpg" alt=""height="30"></li>
+        <li><img src="images/5.jpg" alt=""height="30"></li>
+    </ul>
+
+
+    <script>
+        const img = document.querySelector("img");
+        const lis = document.querySelectorAll("li");
+        console.log(lis,img);
+        lis.forEach((li, index) => {
+            li.addEventListener("mouseover", ()=>{
+                console.log(index);
+                img.setAttribute("src", `images/${index+1}.jpg`)
+                for(let i = 0; i<lis.length; i++){
+                    lis[i].removeAttribute("class", "active")
+                }
+               li.setAttribute("class", "active")
+            
+            })
+        });
+    </script>
+</body>
+</html>
